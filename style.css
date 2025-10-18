@@ -1,0 +1,1450 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --text-dark: #212121;
+    --text-light: #5f5f5f;
+    --border-color: #e0e0e0;
+    --background-light: #f9f9f9;
+    --background-white: #ffffff;
+    --primary-orange: #ff3300;
+    --primary-purple: #6a38d3;
+    --primary-dark-gray: #333333;
+    --submit-yellow: #f9bf2d;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-section {
+    padding-top: 0px; /* 微调：减小页面顶部间距 */
+    padding-bottom: 70px; /* 微调：减小页面底部间距 */
+    box-sizing: border-box;
+    
+    /*min-height: 100vh; /* 确保每个部分至少占满一屏 *//*display: flex;flex-direction: column;justify-content: center;*/
+    
+}
+#home.page-section {
+    padding-top: 170px; /* 这条新规则会覆盖上面，仅对首页生效 */
+    padding-bottom: 140px; /* 这条新规则会覆盖上面，仅对首页生效 */
+     
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 50px; /* 微调：减小副标题下间距 */
+    margin-top: -10px; /* 上提 15px，请根据最终效果调整此负值 */
+    margin-bottom: 20px; /* 减小下方的间距 */
+}
+
+.card {
+    background-color: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+
+.architecture-card img { 
+    height: 180px;         /* 保持图片高度 */
+    object-fit: cover;    /* 确保图片填充空间且不失真 */
+    width: 100%;          /* 确保图片占据卡片宽度 */
+}
+
+.image-placeholder {
+    background-color: #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.image-placeholder::after {
+    content: 'TODO: Add Image';
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    background-color: var(--background-white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 为JS动效添加过渡 */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;         /* 新增：启用Flex布局 */
+    align-items: center;   /* 新增：让图标和文字垂直居中对齐 */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 40px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #adadad;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+    transition: border-color 0.3s, color 0.3s; /* 新增：让颜色变化也更平滑 */
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: var(--text-dark); /* 新增：确保激活和悬停时文字变回黑色 */
+    border-bottom: 2px solid var(--text-dark);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+
+/* --- Home Section --- */
+
+.hero-photo {
+    width: 100%;
+    max-width: 500px;
+    height:auto;
+    border-radius: 25px;
+    object-fit: cover;
+    /* 直接在这里添加阴影 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+#home .home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.home-content h2 {
+    font-size: 66px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+.home-content .title-highlight {
+    background-color: var(--text-dark);
+    color: var(--background-white);
+    padding: 5px 60px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.home-content .title-highlight p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.home-content .description {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+.home-buttons {
+    display: flex;
+    gap: 15px; 
+    flex-wrap: nowrap;
+}
+
+.home-buttons .btn {
+    text-decoration: none;
+    color: white;
+    padding: 12px 10px;
+    /* margin-right: 15px; */ 
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    display: flex;
+    margin-bottom: 10px;
+
+        /* 💥 关键修改 3: 设置 Flexbox 属性实现等宽和图标/文本对齐 */
+    display: flex; /* 启用 Flexbox */
+    justify-content: center; /* 水平居中（可选，但通常有助于美观） */
+    align-items: center; /* 垂直居中 */
+    width: 120px;
+    min-width: 120px; /* 可选：设置最小宽度防止按钮太窄 */
+    flex-direction: row; 
+}
+/* 💥 关键修改 4: 新增图片样式，控制图标大小和与文字的间距 */
+.home-buttons .btn img {
+    width: 20px;       /* 设置图标大小 */
+    height: 20px;      /* 设置图标大小 */
+    margin-right: 8px; /* 图标与文字之间的间距 */
+    /* 确保图标颜色能够适应按钮背景，如果使用 SVG/字体图标则更灵活 */
+    display: inline-block; /* 确保图片参与行内排列 */
+    flex-shrink: 0; /* 防止图片在空间不足时收缩 */
+    /* --- 新增代码 开始 --- */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, filter 0.2s ease-in-out;
+    /* --- 新增代码 结束 --- */
+}
+.home-buttons .btn:hover {
+    /* 效果1: 按钮向上移动3像素，产生上浮感 */
+    transform: translateY(-1px);
+    
+    /* 效果2: 增加一层更明显的阴影，强化立体感 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    /* 效果3: 颜色亮度提升10%，让色彩更鲜活 */
+    filter: brightness(1.1);
+}
+.btn-experience { background-color: var(--primary-dark-gray); }
+.btn-project { background-color: var(--primary-orange); }
+.btn-architecture { background-color: var(--primary-purple); }
+
+/* --- Experience Section --- */
+.experience-grid {
+    display: grid;
+    /* 增加顶部外边距，将卡片整体向下推 */
+    margin-top: 70px; /* 默认可能是 0 或较小值，设置为 30px */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+/* 添加这条新规则，用于实现横线效果 */
+.section-header-underline {
+    border-bottom: 2px solid #888888; /* 2px 粗细，使用深色文本颜色，美观大方 */
+    width: 80px; /* 设置横线长度，使其看起来像一个强调的“标记”而不是分隔线 */
+    margin: 0 auto 10px auto; /* 居中，并将底部的间距设置为 10px */
+    margin-top: -10px; /* 上提 15px，请根据最终效果调整此负值 */
+}
+
+.experience-card-header {
+    margin-bottom: 20px;
+}
+
+.experience-card-date {
+    display: block;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.experience-card-header-content {
+    /* 移除 Flexbox，让内容自然垂直堆叠 */
+    /* display: flex; (已移除) */
+    /* align-items: flex-start; (已移除) */
+    gap: 15px; 
+    padding-bottom: 0px; /* 移除底部间距 */
+    border-bottom: none; /* 移除这里的分隔线 */
+}
+
+.logo-placeholder {
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.experience-card-title-group {
+    /* 为整个标题组增加上边距，拉开与日期的距离 */
+    margin-top:0; 
+}
+.experience-card-title-group h3 {
+    margin: 0; /* 移除底部间距 */
+    font-size: 20px;
+    font-weight: 600; /* 强调公司/学校名称 */
+}
+/* 新增：定义“专业”的样式，保持较小 */
+.experience-role-major {
+    margin: 0;
+    font-size: 15px; /* 专业字体小一些 */
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin-top: 5px; 
+    font-weight: 600; 
+}
+/* 新增：定义“职业”的样式，比专业大 */
+.experience-role-title {
+    margin: 0;
+    font-size: 16px solid  ; /* 职业字体大一些 */
+    font-weight: 500;
+    color: var(--text-light); /* 职业颜色深一些 */
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.experience-card-body ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 11px;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+
+.experience-card-body li {
+    margin-bottom: 12px;
+}
+
+.experience-card-footer {
+    text-align: left;
+    margin-top: 20px;
+}
+.experience-card-footer a {
+    color: #c5c5c5;
+    text-decoration: none;
+    font-size: 12px;
+}
+.experience-card-footer a:hover {
+    text-decoration: underline;
+}       
+
+/* --- Project Section --- */
+.project-grid-large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 10px;
+}
+/* 将占位符的样式应用到实际的 img 标签上 */
+.project-image-content {
+    /* 继承之前的设置 */
+    height: 180px; 
+    border-radius: 10px; 
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3); 
+    margin: 10px; 
+    width: calc(100% - 45px); 
+    /* 确保图片正确填充 */
+    object-fit: cover; 
+    display: block; 
+}
+
+.project-card .image-placeholder { 
+    height: 150px; /* **图片高度缩小 (原 220px)** */
+    border-radius: 10px; /* **增加圆角** */
+    box-shadow: 0  0px 5px rgba(0, 0, 0, 0.3); /* **增加阴影** */
+    margin: 10px; /* 增加外边距，让图片不紧贴卡片边缘 */
+    
+    /* 确保图片只在卡片内部占位，且有圆角和阴影后可以不紧贴顶部 */
+    width: calc(100% - 20px); /* 宽度适配卡片减去左右 margin */
+}
+
+/* 确保图片在卡片顶部有圆角，而不是卡片整体 */
+.project-card { 
+    padding: 0; 
+    /* 移除 Project 卡片的边框和阴影 */
+    border: none !important; /* 强制移除边框 */
+    box-shadow: none !important; /* 强制移除阴影 */ 
+    overflow: hidden; /* 防止图片阴影溢出 */
+}
+/* 因为 project-card-horizontal 也使用了 .card 类，所以需要修改通用 .card */
+/* 也可以直接在 .card 中移除，但为了不影响 Experience 部分，我们针对 Project 卡片来处理 */
+.project-grid-large .card, 
+.project-grid-single .card {
+    border: none;
+    box-shadow: none;
+}
+.project-card-body { padding: 2px 10px 20px 10px; /* **调整文字内容与上方图片的间距,文字内边距：上下左右都微调，使其更居中** */ }
+.project-card-body h4 { 
+    /* --- 项目标题 (建成遗产/个人网页) --- */
+    /* [间距] 标题底部距离，控制与摘要的间距 */
+    margin: 0 0 2px 0; /* **标题底部距离** */
+    /* [大小] 标题字体大小 */
+    font-size: 20px; /* **标题大小** */
+     /* [颜色] 标题颜色 */
+    font-weight: 600; 
+    color: var(--text-dark); /* **标题颜色** */ 
+}
+.project-card-body p { 
+    /* --- 项目摘要/描述 (山陕会馆建成遗产展示大屏...) --- */
+    margin: 0 0 5px 0; /* **摘要底部距离** */
+    font-size: 14px; /* **摘要字体大小** */
+    font-weight: 500; 
+    color: var(--text-dark); /* **摘要颜色** */
+    line-height: 1.3;
+}        
+.project-card-body span { 
+    /* --- 项目详细描述 (需求挖掘：联合文字学者...) --- */
+    font-size: 12px; /* **详细描述字体大小** */
+    color: var(--text-light); /* **详细描述颜色** */
+    line-height: 1.5; 
+    display: block;
+    margin: 0 15px 5px 0; /* **摘要底部距离** */
+}
+
+.project-grid-single {
+    margin-top: 10px; /* **这是调整的关键点：增加顶部外边距** */
+    /* 默认值可能是 20px 或 0px，你可以尝试 40px 或 50px 来增加距离 */
+    
+    /* 保持原有的居中设置 */
+    margin-bottom: 20px;
+}
+.project-card-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* 增加图片和文字间的距离 */
+    padding: 20px; /* 给卡片内增加内边距 */
+    border: 1px solid var(--border-color); /* 重新添加一个轻微的边框，以区分上下卡片 */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.project-card-horizontal .image-placeholder { border-radius: 8px; flex-shrink: 0; }
+/* 调整 body 的内容，使其与设计稿对齐 */
+.project-card-horizontal .project-card-body {
+    padding: 0; /* 移除内边距，让内容更紧凑 */
+    flex-grow: 1; /* 占据剩余空间 */
+}
+/* 为 COZE 智能体图片添加阴影 */
+.coze-image {
+    box-shadow: 0  0px 5px rgba(0, 0, 0, 0.2); /* **增加阴影** */
+}
+.tag-group { margin-top: 15px; }
+.tag-group .tag { background: #eef1f5; padding: 5px 10px; border-radius: 5px; font-size: 14px; margin-right: 10px; }
+.tag-group .tag-user { font-size: 14px; color: #aaa; }
+.project-card-aside {
+    display: none;
+    border-left: 1px solid var(--border-color);
+    padding-left: 25px;
+    margin-left: 10px;
+}
+.project-card-aside h4 { margin: 0 0 10px 0; font-size: 18px; }
+.project-card-aside p, .project-card-aside span { font-size: 14px; color: var(--text-light); margin: 0; line-height: 1.5; }
+
+/* --- Project Section Page 2 --- */
+
+/* 1. 外层容器：恢复分散布局并确保内容顶部对齐 */
+.social-account-showcase {
+    display: flex;
+    justify-content: space-between; /* 💥 关键：确保左右模块分散 */
+    align-items: flex-start; /* 确保内容从顶部对齐 */
+
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 2. 左侧模块：抖音（实现内容右对齐 + 添加竖线） */
+.social-account-left{
+    /* 保持文字右对齐 */
+    text-align: right; 
+    /* 💥 关键：Flexbox 垂直布局 */
+    display: flex;
+    flex-direction: column; 
+    /* 💥 关键：让 Flex 容器内部的所有子元素靠右对齐 */
+    align-items: flex-end; 
+    
+    /* 💥 核心修改：添加右侧边框作为竖线 */
+    border-right: 1px solid #e0e0e0; 
+    /* 💥 核心修改：添加右侧内边距，作为竖线和右侧模块之间的间距 */
+    padding-right: 60px; 
+    
+    width: 100%;
+    max-width: 530px;
+    flex-grow: 1; 
+    flex-basis: 0; 
+}
+
+/* 3. 右侧模块：小红书（实现内容左对齐 + 添加左侧间距） */
+.social-account-right {
+    text-align: left; /* 强制文字内容左对齐 */
+    /* 💥 核心修改：添加左侧内边距，以匹配左侧的 padding-right */
+    padding-left: 20px; 
+
+    width: 100%;
+    max-width: 550px;
+    flex-grow: 1; 
+    flex-basis: 0; 
+}
+
+
+/* 4. 标题容器样式（通用 + 左右差异化） */
+.mobile-project-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0px;
+    width: 100%; 
+}
+/* 抖音标题：强制靠右对齐 */
+.social-account-left .mobile-project-header {
+    justify-content: flex-end; 
+}
+/* 小红书标题：强制靠左对齐 (覆盖了 .mobile-project-header 的 flex-end) */
+.social-account-right .mobile-project-header {
+    justify-content: flex-start; 
+}
+.mobile-project-header h4 {
+    margin: 0;
+    /* 💥 关键修改：调整标题文字大小 */
+    font-size: 20px; 
+    
+    font-weight: 700;
+}
+
+
+/* 5. 描述详情块（通用 + 适应左侧右对齐） */
+.mobile-project-details {
+    /* 💥 关键：限制宽度 + inline-block，实现左侧块级元素右对齐 */
+    max-width: 600px;
+    display: inline-block; 
+}
+.mobile-project-details p { 
+    margin: 0 0 5px 0; 
+    font-size: 15px; 
+    font-weight: 500;
+    max-width: 505px; 
+}
+.mobile-project-details span { 
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    color: var(--text-light); 
+    line-height: 1.7; 
+    max-width: 500px;
+}
+
+/* 6. 手机截图堆叠区布局 */
+.social-account-left .mobile-images-stacked {
+    /* 确保手机截图堆叠区在左侧 Flex 容器内靠右对齐 (align-items: flex-end 已实现) */
+    display: flex;
+    gap: 70px;
+    margin-top: 20px;
+}
+.social-account-right .mobile-images-stacked {
+    display: flex;
+    gap: 70px;
+    margin-top: 20px;
+}
+
+
+/* 7. 单个手机容器（实现图片下方的链接垂直对齐） */
+.mobile-image-wrapper {
+    display: flex;
+    flex-direction: column; /* 垂直排列：手机 + 链接/其他内容 */
+    align-items: flex-end; /* 关键：将链接推到最右侧 */
+    flex-shrink: 0;
+}
+
+
+/* 8. 手机截图样式 */
+.mobile-screenshot {
+    position: relative;
+    border: 7px solid #333;
+    border-radius: 30px;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.2);
+    width: 180px;
+    height: 360px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mobile-screenshot:hover {
+    /* 效果1: 向上移动6像素，产生上浮感 */
+    transform: translateY(-6px);
+    
+    /* 效果2: 增强阴影，使其看起来更立体 */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* 手机刘海 */
+.mobile-screenshot::before {
+    content: ''; 
+    position: absolute;
+    top: 2px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 8px 8px 8px 8px;
+    z-index: 5;
+}
+
+/* 9. 确保手机截图图片正确填充手机壳 */
+.mobile-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 10. 底部链接样式 */
+.mobile-project-footer {
+    width: 180px; /* 宽度和手机壳保持一致 */
+    text-align: right; 
+    margin-top: 5px; 
+    color: #ff9900; 
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s;
+    display: block; /* 确保它独占一行并应用宽度 */
+}
+.mobile-project-footer:hover {
+    color: var(--text-dark);
+    text-decoration: underline;
+}
+
+/* 11. 额外的通用样式（保持不变） */
+.social-icon {
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* --- Architecture Section --- */
+.architecture-grid {
+    display: grid;
+    /* 💥 新增: 限制整个网格的最大宽度，减小其在页面中占据的横向空间 (例如：从 1200px 减小到 960px) */
+    max-width: 1080px; 
+    
+    /* 💥 新增: 居中显示限制宽度的网格容器 */
+    margin: 0 auto; 
+    /* 💥 关键修改 1: 保持 3 列，但缩小间距，让卡片更紧凑 */
+    grid-template-columns: repeat(3, 1fr);
+    /* 💥 增大左右间距 (列间距) */
+    column-gap: 40px; 
+
+    /* 💥 减小上下间距 (行间距) */
+    row-gap: 15px; /* 例如：设置为 15px */
+    /* 💥 关键修改: 增大网格容器顶部的外边距，向下推开标题 */
+    margin-top: 40px; /* 您可以根据需要调整这个值，例如 30px、40px 或 50px */
+}
+.architecture-card { 
+    padding: 0; 
+    /* 💥 关键修改 2: 重新添加边框和阴影，让每个卡片更独立清晰 (参考 Project 部分，但这里保留卡片容器) */
+    border: 1px solid var(--border-color);
+    border-radius: 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+/* 💥 关键修改 3: 图片占位符/图片的样式 */
+.architecture-card .image-placeholder { 
+    height: 180px; /* 缩小图片高度，例如从默认的 220px 减小到 180px */
+    /* border-radius: 8px 8px 0 0; 保持顶部圆角 */
+    width: 100%; /* 确保宽度填充 */
+    /* 确保真实的 img 标签样式与此一致（在下面的 HTML 中应用） */
+}
+
+/* 💥 关键修改 4: 缩小文字内边距，使内容更紧凑 */
+.architecture-card-body { 
+    padding: 8px 12px 10px; /* 内边距从 20px 缩小到 12px */
+}
+
+/* 💥 关键修改 5: 缩小标题和段落字体大小及间距 */
+.architecture-card-body h4 { 
+    margin: 0 0 5px 0; /* 标题底部间距缩小 */
+    font-size: 18px; /* 标题字体缩小 (原 18px) */
+    font-weight: 600; /* 标题加粗 */
+    line-height: 1.3;
+}
+.architecture-card-body p { 
+    margin: 0; 
+    font-size: 12px; /* 描述文字缩小 (原 14px) */
+    color: var(--text-light); 
+    line-height: 1.3;
+}
+
+
+/* --- Contact Section --- */
+#contact .container {
+    width: 100%;
+}
+.contact-container {
+    display: flex;
+    justify-content: center; /* 修改：改为居中对齐 */
+    align-items: center;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.contact-info {
+    max-width: 100%; /* 修改：允许它占据更多空间 */
+    text-align: center; /* 新增：让所有文字居中 */
+}
+.contact-info h3 { font-size: 28px; margin: 0 0 15px 0; }
+.contact-info p { margin: 0 0 30px 0; color: var(--text-light); }
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 新增：使用Flex布局实现横排 */
+    justify-content: center; /* 新增：让列表项整体居中 */
+    gap: 30px; /* 新增：设置列表项之间的间距 */
+    flex-wrap: wrap; /* 新增：在小屏幕上允许换行 */
+}
+.contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0; /* 修改：移除底部边距，因为已用gap代替 */
+    font-size: 16px;
+}        
+.contact-details .icon { font-size: 20px; margin-right: 15px; }
+.contact-details a { color: var(--text-dark); text-decoration: none; }
+
+/* 💥 关键修改 1: 缩小右侧部分大小并添加盒子样式 */
+.contact-form {
+     display: none; /* 新增：隐藏表单盒子 */
+    /* flex-grow: 1; /* 可以删除
+    ，因为我们现在使用 max-width 严格控制宽度 */
+    max-width: 450px; /* 进一步缩小右侧表单的最大宽度 (原 500px) */
+    width: 100%; /* 确保在小屏幕下能占满宽度 */
+
+    /* 盒子样式：圆角、阴影、背景色和内边距 */
+    background-color: #ffffff; /* 假设背景是白色，可以根据需要调整 */
+    padding:20px 30px; /* 增加内边距，使内容不紧贴边缘 */
+    border-radius: 12px; /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 柔和的阴影效果 */
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group label { 
+    display: block; 
+    margin-bottom: 1px; 
+    font-size: 14px; 
+    color: var(--text-light); 
+}
+/* 💥 关键修改 2: 优化输入框样式，使其更适应新盒子 */
+.form-group input, .form-group textarea {
+    /* 保持原有的基础样式 */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd; /* 边框可以稍微调浅一点 */
+    border-radius: 8px; /* 稍微增大输入框圆角，与盒子圆角匹配 */
+    font-family: var(--font-family);
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background-color: var(--submit-yellow);
+    color:#ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* --- Responsive Styles --- */
+
+@media (max-width: 1024px) {
+    .page-section {
+        min-height: auto;
+    }
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-grid-large, .architecture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .mobile-screenshot {
+    width: 160px;  /* 修改：设置一个适合平板的固定宽度 */
+    height: 320px; /* 修改：同比例调整高度以保持形状 */
+    }
+    /* --- 平板端：Project社交媒体模块布局修正 --- */
+    .social-account-showcase {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center; /* 新增：让抖音/小红书两个大模块自身也居中 */
+    }
+
+    .social-account-left,
+    .social-account-right {
+        width: 100%;
+        max-width: 550px; /* 新增：给模块一个最大宽度，避免在宽平板上过宽 */
+
+        /* 移除桌面端样式 */
+        border-right: none;
+        padding-left: 0;
+        padding-right: 0;
+        
+        /* 强制内部所有内容居中 */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 确保块级子元素（如图片容器）居中 */
+        text-align: center;    /* 确保文字内容居中 */
+    }
+
+    /* 确保标题部分内部也居中 */
+    .social-account-left .mobile-project-header,
+    .social-account-right .mobile-project-header {
+        justify-content: center;
+    }
+
+}
+
+   @media (max-width: 768px) {
+    .page-section {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-white);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .main-nav.active {
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .main-nav a {
+        display: block;
+        padding: 15px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    #home .home-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+    .home-image .image-placeholder {
+        width: 280px !important;
+        height: 280px !important;
+    }
+    .home-content h1, .home-content h2 {
+        font-size: 42px;
+    }
+
+    .experience-grid,
+    .project-grid-large { /* Architecture Grid 单独处理 */
+        grid-template-columns: 1fr;
+    }
+
+    /* --- 以下是本次新增和修改的代码 --- */
+
+    /* 要求1: 确保Project部分图片比例不变 (通过 object-fit) */
+    .project-image-content {
+        object-fit: cover; /* 确保图片内容不拉伸变形 */
+    }
+    .coze-image {
+        object-fit: cover;
+        width: 100%; /* 让COZE卡片图片宽度自适应 */
+        height: 180px;
+    }
+
+    /* 要求2: 调整手机模型尺寸和布局 */
+    .mobile-screenshot {
+        width: 135px; /* 缩小手机宽度 */
+        height: 270px; /* 同比例缩小高度 */
+        border-width: 5px; /* 边框也变细一些 */
+        border-radius: 20px;
+    }
+    .mobile-screenshot::before { /* 刘海也要相应调整 */
+        width: 35px;
+        height: 8px;
+        border-radius: 6px;
+    }
+    .social-account-left .mobile-images-stacked,
+    .social-account-right .mobile-images-stacked {
+        flex-direction: row !important; /* 强制手机模型保持横向排列 */
+        gap: 15px; /* 缩小手机之间的间距 */
+        justify-content: center; /* 居中显示 */
+        width: 100%;
+    }
+
+    /* 要求3: Architecture部分改为两列布局 */
+    .architecture-grid {
+        grid-template-columns: repeat(2, 1fr); /* 修改为两列 */
+        gap: 20px; /* 调整间距 */
+    }
+    /* 为了让卡片比例更协调，可以适当缩小图片高度 */
+    .architecture-card img {
+        height: 140px;
+    }
+    
+    /* 其他布局的通用调整 */
+    .project-card-horizontal,
+    .social-account-showcase { /* 调整小红书/抖音模块 */
+        flex-direction: column;
+    }
+    /* --- 修复：仅在手机端调整小红书模块的显示顺序 --- */
+    .social-account-right {
+        display: flex;          /* 启用Flex布局 */
+        flex-direction: column; /* 设置为垂直方向 */
+        align-items: center;
+    }
+    .social-account-right .mobile-project-header {
+        order: 1; /* 将标题设置为第1个显示 */
+    }
+    .social-account-right .mobile-project-details {
+        order: 2; /* 将描述文字设置为第2个显示 */
+    }
+    .social-account-right .mobile-images-stacked {
+        order: 3; /* 将图片设置为最后显示 */
+    }
+    .social-account-left { /* 移除分割线和部分边距 */
+        border-right: none;
+        padding-right: 0;
+        align-items: center; /* 居中对齐所有内容 */
+        text-align: center;
+    }
+    .social-account-left .mobile-project-header,
+    .social-account-right .mobile-project-header {
+        justify-content: center;
+    }
+    .project-card-aside {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-top: 20px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .contact-info {
+        max-width: 100%;
+    }
+    
+}
+
+    /* --- 卡片悬停时显示“点击查看详情” --- */
+
+    /* 1. 为图片容器设置定位上下文 */
+    .card-image-wrapper,
+    .architecture-card {
+        position: relative;
+    }
+
+    /* 2. 创建一个默认隐藏的遮罩层和文字 */
+    .js-modal-trigger .card-image-wrapper::after,
+    .js-modal-trigger.architecture-card::after {
+        content: '点击查看详情'; /* 这是您想显示的文字 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        /* 文字样式 */
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        
+        /* 遮罩层样式 */
+        background-color: rgba(127, 127, 127, 0.5); /* 半透明黑色背景 */
+        
+        /* 垂直和水平居中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        /* 默认隐藏 */
+        opacity: 0;
+        
+        /* 添加平滑过渡效果 */
+        transition: opacity 0.3s ease;
+        
+        /* 确保在图片之上，但在箭头之下 */
+        z-index: 1;
+    }
+
+    /* 特殊处理 project-card 内部的圆角 */
+    .js-modal-trigger .card-image-wrapper::after {
+        border-radius: 10px;
+        margin: 10px;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+    }
+    /* 特殊处理 project-card-horizontal 内部的圆角 */
+    .js-modal-trigger.project-card-horizontal .card-image-wrapper::after {
+        border-radius: 8px;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* 3. 当鼠标悬停在卡片上时，显示遮罩层和文字 */
+    .js-modal-trigger:hover .card-image-wrapper::after,
+    .js-modal-trigger.architecture-card:hover::after {
+        opacity: 1;
+    }
+
+    /* 4. 确保卡片轮播的箭头在遮罩层之上 */
+    .card-arrow {
+        z-index: 2;
+    }
+
+
+    /* --- 首页加载入场动画 --- */
+
+    /* 1. 定义两种动画效果：从下往上淡入、从右往左淡入 */
+    @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    @keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+    /* --- 首页加载入场动画 (已修正) --- */
+
+    /* 1. 定义两种动画效果：从下往上淡入、从右往左淡入 */
+    @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    @keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+    /* 2. 为首页需要动画的元素设置初始状态 */
+    #home .home-content > *, #home .home-image {
+    /* 动画开始前，元素是完全透明的 */
+    opacity: 0;
+    }
+
+    /* 3. 为首页各元素应用动画效果和延迟时间（实现交错出现） */
+
+    /* 右侧图片：从右侧入场，延迟0.2秒后开始 */
+    #home .home-image {
+    animation: fadeInRight 0.8s ease-out 0.2s forwards; /* 修改：合并了延迟并添加 forwards */
+    }
+
+    /* "Hello" 标题：从下方入场，延迟0.4秒后开始 */
+    #home .home-content h1 {
+    animation: fadeInUp 0.7s ease-out 0.4s forwards; /* 修改：合并了延迟并添加 forwards */
+    }
+
+    /* "I'm Hao Ruolin" 标题：延迟0.6秒后开始 */
+    #home .home-content h2 {
+    animation: fadeInUp 0.7s ease-out 0.6s forwards; /* 修改：合并了延迟并添加 forwards */
+    }
+
+    /* 高亮标题：延迟0.8秒后开始 */
+    #home .home-content .title-highlight {
+    animation: fadeInUp 0.7s ease-out 0.8s forwards; /* 修改：合并了延迟并添加 forwards */
+    }
+
+    /* 描述文字：延迟1.0秒后开始 */
+    #home .home-content .description {
+    animation: fadeInUp 0.7s ease-out 1.0s forwards; /* 修改：合并了延迟并添加 forwards */
+    }
+
+    /* 三个按钮的容器：最后入场，延迟1.2秒后开始 */
+    #home .home-content .home-buttons {
+    animation: fadeInUp 0.7s ease-out 1.2s forwards; /* 修改：合并了延迟并添加 forwards */
+    }
+
+
+
+
+
+
+    /* === 以下是为JS动效新增的CSS样式 === */
+    /* 导航栏滚动后的样式 */
+    .main-header.scrolled {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    /* 为所有可交互卡片设置过渡效果，确保动画平滑 */
+    .interactive-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* 卡片悬停效果 */
+    .card.interactive-card:hover {
+        transform: translateY(-6px)!important;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); /* 修改：阴影效果与手机图片保持一致 */
+    }
+
+    /* 元素淡入动画的初始状态 */
+    .fade-in-element {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    /* 元素进入视口后的最终状态 */
+    .fade-in-element.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* --- Footer Section --- */
+    .main-footer {
+        background-color: #1a1a2e; /* 一个深邃的午夜蓝色 */
+        color: #e0e0e0;
+        padding: 50px 0 30px 0;
+        margin-top: 50px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        flex-wrap: wrap; /* 在小屏幕上换行 */
+        gap: 20px;
+    }
+
+    .footer-left .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .footer-left p {
+        margin: 0;
+        color: #a0a0a0;
+        max-width: 300px;
+        font-size: 14px; /* 新增：在这里修改文字大小 */
+    }
+
+    .footer-right {
+        display: flex;
+        gap: 20px;
+    }
+
+    .footer-right a {
+        color: #a0a0a0;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-right a:hover {
+        color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    .footer-divider {
+        border: none;
+        height: 1px;
+        background-color: #3a3a5e;
+        margin-bottom: 20px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        font-size: 12px;
+        color: #70708e;
+        margin: 0;
+    }
+
+    /* --- Project Modal (详情弹窗) --- */
+
+    /* 定义弹窗出现时的动画 */
+    @keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+    }
+
+    /* 模态框背景遮罩 */
+    .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none; /* 默认隐藏 */
+        align-items: center;
+        justify-content: center;
+        z-index: 2000; /* 确保在最顶层 */
+        backdrop-filter: blur(5px);
+    }
+
+    /* 当模态框激活时应用的动画 */
+    .modal-container.is-visible {
+        display: flex;
+    }
+    .modal-container.is-visible .modal-content {
+        animation: modalFadeIn 0.3s ease-out;
+    }
+
+
+    /* 模态框内容区域 */
+    .modal-content {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto; /* 内容过多时可以滚动 */
+        position: relative;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    /* 关闭按钮 */
+    .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #888;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .modal-close:hover {
+        color: #333;
+    }
+
+    /* 弹窗内的图片 */
+    .modal-image {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        object-fit: cover;
+        max-height: 400px;
+    }
+
+    /* 弹窗内的标题 */
+    .modal-title {
+        font-size: 28px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: var(--text-dark);
+    }
+
+    /* 弹窗内的描述文字 */
+    .modal-description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-light);
+    }
+
+    /* 当弹窗打开时，禁止背景页面滚动 */
+    body.modal-open {
+        overflow: hidden;
+    }
+    /* --- Modal Gallery Styles --- */
+    .modal-gallery {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .modal-image {
+        transition: opacity 0.2s ease-in-out; /* 为图片切换添加淡入淡出效果 */
+    }
+
+    .gallery-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(26, 26, 46, 0.5);
+        color: white;
+        border: none;
+        font-size: 32px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 40px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+        user-select: none; /* 防止选中文本 */
+    }
+
+    .gallery-arrow:hover {
+        background-color: rgba(26, 26, 46, 0.8);
+    }
+
+    .gallery-arrow.prev {
+        left: 10px;
+    }
+
+    .gallery-arrow.next {
+        right: 10px;
+    }
+
+    /* 当只有一个图片或在边界时，隐藏箭头 */
+    .gallery-arrow.hidden {
+        display: none;
+    }
+    /* --- Card Carousel Styles --- */
+    .card-image-wrapper {
+        position: relative;
+        overflow: hidden; /* 隐藏可能溢出的箭头部分 */
+    }
+
+    /* 统一为卡片内的图片添加过渡效果 */
+    .project-image-content, .coze-image {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .card-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        width: 30px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: opacity 0.3s, background-color 0.3s;
+        user-select: none;
+        
+        /* 默认隐藏箭头 */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* 鼠标悬停在图片容器上时，显示箭头 */
+    .card-image-wrapper:hover .card-arrow {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .card-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .card-arrow.prev {
+        left: 5px;
+    }
+    /* 特殊处理横向卡片的左箭头位置 */
+    .project-card-horizontal .card-arrow.prev {
+        left: 0;
+    }
+
+
+    .card-arrow.next {
+        right: 5px;
+    }
+    /* 特殊处理横向卡片的右箭头位置 */
+    .project-card-horizontal .card-arrow.next {
+        right: 0;
+    }
+
